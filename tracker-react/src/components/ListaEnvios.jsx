@@ -29,8 +29,8 @@ function ListaEnvios() {
 
   return (
     <div>
-      <h2>Historial de Entrenamientos</h2>
-      <table border="1">
+      <h2>📋 Historial de Entrenamientos</h2>
+      <table>
         <thead>
           <tr>
             <th>Competidor</th>
@@ -48,8 +48,8 @@ function ListaEnvios() {
               <td>{v.lenguaje}</td>
               <td>{v.fecha}</td>
               <td>
-                <button onClick={() => setEnvioSeleccionado(v)}>Editar</button>
-                <button onClick={() => eliminarEnvio(v.id)}>Eliminar</button>
+                <button className="btn-sm" onClick={() => setEnvioSeleccionado(v)}>Editar</button>
+                <button className="btn-sm btn-danger" onClick={() => eliminarEnvio(v.id)}>Eliminar</button>
               </td>
             </tr>
           ))}

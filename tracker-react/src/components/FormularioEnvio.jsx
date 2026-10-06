@@ -41,8 +41,8 @@ function FormularioEnvio() {
   };
 
   return (
-    <div style={{ marginBottom: '20px' }}>
-      <h2>Registrar Nuevo Entrenamiento</h2>
+    <div>
+      <h2>📝 Registrar Nuevo Entrenamiento</h2>
       <form onSubmit={handleSubmit}>
         <select name="competidor_id" value={formData.competidor_id} onChange={handleChange} required>
           <option value="">Seleccione competidor</option>
@@ -61,7 +61,7 @@ function FormularioEnvio() {
         <input type="text" name="lenguaje" placeholder="Lenguaje" value={formData.lenguaje} onChange={handleChange} required />
         <input type="date" name="fecha" value={formData.fecha} onChange={handleChange} required />
         
-        <button type="submit">Guardar Envío</button>
+        <button type="submit" className="btn-green">Guardar Envío</button>
       </form>
     </div>
   );

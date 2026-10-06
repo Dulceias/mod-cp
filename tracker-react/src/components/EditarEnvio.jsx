@@ -30,8 +30,8 @@ function EditarEnvio({ envio, onUpdate }) {
   };
 
   return (
-    <div style={{ marginTop: '20px', padding: '10px', border: '1px solid orange' }}>
-      <h3>Editar Entrenamiento</h3>
+    <div className="edit-panel">
+      <h3>✏️ Editar Entrenamiento</h3>
       <form onSubmit={handleSubmit}>
         <select name="competidor_id" value={formData.competidor_id} onChange={handleChange} required>
           {competidores.map(c => <option key={c.id} value={c.id}>{c.nombre}</option>)}

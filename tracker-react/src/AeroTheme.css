@@ -1,0 +1,737 @@
+/* =========================================================
+   AeroTheme.css — Frutiger Aero / Y2K Cyber for Tracker
+   Palette: #7fc3ff · #2b84db · #a8f02c · #ffffff
+   Fonts : Trebuchet MS, Tahoma, Arial
+   ========================================================= */
+
+/* ---------- Reset & Global Override ---------- */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Trebuchet MS', Tahoma, Arial, sans-serif;
+  background:
+    radial-gradient(ellipse at 20% 0%, rgba(127,195,255,0.35) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 100%, rgba(168,240,44,0.15) 0%, transparent 50%),
+    linear-gradient(180deg, #d4edff 0%, #e8f5ff 40%, #f0faff 100%);
+  background-attachment: fixed;
+  min-height: 100vh;
+  color: #1a3a5c;
+  line-height: 1.55;
+}
+
+/* Override index.css root for Aero palette */
+#root {
+  width: 900px;
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: left;
+  border-inline: none;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  padding: 0 16px 40px;
+}
+
+/* ---------- Links ---------- */
+a {
+  color: #2b84db;
+  text-decoration: none;
+  transition: color 0.25s;
+}
+a:hover { color: #a8f02c; }
+
+/* =========================================================
+   WINDOW CHROME (XP / Vista glass wrapper)
+   ========================================================= */
+.window-chrome {
+  border: 2px solid rgba(43,132,219,0.4);
+  border-radius: 12px 12px 0 0;
+  overflow: hidden;
+  box-shadow:
+    0 8px 40px rgba(43,132,219,0.18),
+    0 0 0 1px rgba(255,255,255,0.5);
+  margin-top: 28px;
+  background: rgba(255,255,255,0.55);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.window-titlebar {
+  background: linear-gradient(180deg, #3ea0f0 0%, #1a70c8 40%, #0d5aaa 100%);
+  display: flex;
+  align-items: center;
+  padding: 6px 12px;
+  gap: 10px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.88rem;
+  text-shadow: 0 1px 3px rgba(0,40,100,0.5);
+  user-select: none;
+}
+
+.window-titlebar__icon {
+  font-size: 1rem;
+}
+
+.window-titlebar__text {
+  flex: 1;
+}
+
+.window-titlebar__controls {
+  display: flex;
+  gap: 4px;
+}
+
+.window-btn {
+  width: 22px; height: 22px;
+  border-radius: 4px;
+  border: 1px solid rgba(255,255,255,0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  color: #fff;
+  cursor: pointer;
+  transition: brightness 0.15s;
+}
+.window-btn:hover { filter: brightness(1.2); }
+.window-btn--min { background: linear-gradient(180deg, #4090d8, #2060a0); }
+.window-btn--max { background: linear-gradient(180deg, #4090d8, #2060a0); }
+.window-btn--close { background: linear-gradient(180deg, #e85050, #b01818); }
+
+.window-body {
+  padding: 0;
+  background: linear-gradient(180deg,
+    rgba(255,255,255,0.88) 0%,
+    rgba(240,250,255,0.75) 100%);
+}
+
+/* =========================================================
+   HEADER (crystal banner)
+   ========================================================= */
+.aero-header {
+  position: relative;
+  background: linear-gradient(180deg,
+    rgba(255,255,255,0.9) 0%,
+    rgba(200,230,255,0.55) 100%);
+  padding: 28px 32px 20px;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(200,225,245,0.6);
+}
+
+/* Crystal shard decoration */
+.aero-header::before {
+  content: '';
+  position: absolute;
+  top: -50px; right: -30px;
+  width: 280px; height: 240px;
+  background: linear-gradient(135deg,
+    rgba(127,195,255,0.3) 0%,
+    rgba(255,255,255,0.45) 50%,
+    rgba(200,235,255,0.25) 100%);
+  clip-path: polygon(30% 0%, 100% 0%, 100% 65%, 55% 100%, 0% 45%);
+  pointer-events: none;
+}
+
+.aero-header::after {
+  content: '';
+  position: absolute;
+  top: 10px; right: 80px;
+  width: 120px; height: 100px;
+  background: linear-gradient(160deg,
+    rgba(168,240,44,0.15) 0%,
+    rgba(127,195,255,0.2) 100%);
+  clip-path: polygon(50% 0%, 100% 40%, 80% 100%, 10% 70%, 0% 20%);
+  pointer-events: none;
+}
+
+.aero-header h1 {
+  font-family: 'Trebuchet MS', Tahoma, Arial, sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #fff;
+  text-shadow:
+    0 2px 8px rgba(43,132,219,0.5),
+    0 0 20px rgba(127,195,255,0.3);
+  font-style: italic;
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+.aero-header p {
+  font-size: 0.85rem;
+  color: #4a8abf;
+  font-style: italic;
+  margin-top: 4px;
+  position: relative;
+  z-index: 1;
+}
+
+/* =========================================================
+   NAVIGATION TABS
+   ========================================================= */
+.aero-nav {
+  display: flex;
+  gap: 10px;
+  padding: 14px 24px;
+  background: linear-gradient(180deg,
+    rgba(240,248,255,0.7) 0%,
+    rgba(220,238,255,0.4) 100%);
+  border-bottom: 2px solid rgba(43,132,219,0.15);
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* =========================================================
+   GLOSSY BUTTONS (global)
+   ========================================================= */
+button,
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 24px;
+  font-family: 'Trebuchet MS', Tahoma, Arial, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(180deg, #9dd5ff 0%, #2b84db 45%, #1b6fc0 100%);
+  border: 2px solid rgba(255,255,255,0.65);
+  border-radius: 50px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  box-shadow:
+    0 3px 10px rgba(43,132,219,0.3),
+    inset 0 1px 0 rgba(255,255,255,0.5),
+    inset 0 -1px 4px rgba(0,60,130,0.18);
+  text-shadow: 0 1px 3px rgba(0,50,120,0.4);
+  transition: transform 0.15s, box-shadow 0.15s;
+  letter-spacing: 0.3px;
+}
+
+/* Glossy glass shine overlay */
+button::before,
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 50%;
+  background: linear-gradient(180deg,
+    rgba(255,255,255,0.5) 0%,
+    rgba(255,255,255,0.08) 100%);
+  border-radius: 50px 50px 0 0;
+  pointer-events: none;
+}
+
+button:hover,
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 6px 20px rgba(43,132,219,0.4),
+    inset 0 1px 0 rgba(255,255,255,0.6),
+    inset 0 -1px 4px rgba(0,60,130,0.22);
+}
+
+button:active,
+.btn:active {
+  transform: translateY(0);
+  box-shadow:
+    0 1px 4px rgba(43,132,219,0.25),
+    inset 0 2px 6px rgba(0,60,130,0.3);
+}
+
+/* Green variant */
+button.btn-green,
+.btn-green {
+  background: linear-gradient(180deg, #c8ff6e 0%, #7ec420 45%, #5da010 100%);
+  text-shadow: 0 1px 3px rgba(40,80,0,0.35);
+  box-shadow:
+    0 3px 10px rgba(100,180,20,0.3),
+    inset 0 1px 0 rgba(255,255,255,0.45),
+    inset 0 -1px 4px rgba(40,80,0,0.15);
+}
+
+/* Red / danger variant */
+button.btn-danger,
+.btn-danger {
+  background: linear-gradient(180deg, #ff8a8a 0%, #d03030 45%, #b02020 100%);
+  text-shadow: 0 1px 3px rgba(80,0,0,0.4);
+  box-shadow:
+    0 3px 10px rgba(200,40,40,0.25),
+    inset 0 1px 0 rgba(255,255,255,0.4),
+    inset 0 -1px 4px rgba(80,0,0,0.15);
+}
+
+/* Small button */
+button.btn-sm,
+.btn-sm {
+  padding: 6px 16px;
+  font-size: 0.8rem;
+  border-radius: 40px;
+}
+
+/* =========================================================
+   PAGE TITLE DECORATOR
+   ========================================================= */
+.page-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 20px 24px 16px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #2b84db;
+}
+
+.page-title__bars {
+  display: inline-flex;
+  gap: 2px;
+}
+.page-title__bars span {
+  display: inline-block;
+  width: 4px; height: 14px;
+  background: linear-gradient(180deg, #7fc3ff, #2b84db);
+  border-radius: 2px;
+}
+
+.page-title__diamond {
+  font-size: 0.7rem;
+  color: #7fc3ff;
+}
+
+/* =========================================================
+   SEPARATOR
+   ========================================================= */
+.separator {
+  height: 3px;
+  background: linear-gradient(90deg,
+    transparent 0%, #7fc3ff 15%, #2b84db 50%, #7fc3ff 85%, transparent 100%);
+  border-radius: 2px;
+  margin: 10px 24px;
+  position: relative;
+}
+.separator::after {
+  content: '';
+  position: absolute;
+  left: 50%; top: -3px;
+  transform: translateX(-50%);
+  width: 8px; height: 8px;
+  background: #2b84db;
+  border-radius: 50%;
+  box-shadow: 0 0 6px rgba(43,132,219,0.5);
+}
+
+/* =========================================================
+   TRANSLUCENT CARD / PANEL
+   ========================================================= */
+.card {
+  background: linear-gradient(180deg,
+    rgba(255,255,255,0.92) 0%,
+    rgba(235,248,255,0.82) 100%);
+  border: 2px solid rgba(255,255,255,0.95);
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow:
+    0 6px 28px rgba(43,132,219,0.1),
+    inset 0 1px 0 rgba(255,255,255,1),
+    inset 0 -1px 0 rgba(200,225,245,0.35);
+  margin: 0 24px 20px;
+}
+
+.card h2,
+.card h3 {
+  font-family: 'Trebuchet MS', Tahoma, Arial, sans-serif;
+  color: #2b84db;
+  font-weight: 700;
+  margin-bottom: 14px;
+  font-size: 1.15rem;
+}
+
+/* =========================================================
+   FORM STYLING
+   ========================================================= */
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: flex-end;
+}
+
+select,
+input[type="text"],
+input[type="date"],
+input[type="number"],
+input[type="email"],
+textarea {
+  font-family: 'Trebuchet MS', Tahoma, Arial, sans-serif;
+  font-size: 0.88rem;
+  color: #1a3a5c;
+  padding: 10px 16px;
+  border: 2px solid rgba(127,195,255,0.5);
+  border-radius: 12px;
+  background: linear-gradient(180deg,
+    rgba(255,255,255,0.95) 0%,
+    rgba(240,250,255,0.85) 100%);
+  box-shadow:
+    inset 0 2px 6px rgba(43,132,219,0.08),
+    0 1px 0 rgba(255,255,255,0.8);
+  outline: none;
+  transition: border-color 0.25s, box-shadow 0.25s;
+  min-width: 180px;
+  flex: 1;
+}
+
+select:focus,
+input[type="text"]:focus,
+input[type="date"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  border-color: #2b84db;
+  box-shadow:
+    inset 0 2px 6px rgba(43,132,219,0.1),
+    0 0 0 3px rgba(43,132,219,0.15),
+    0 1px 0 rgba(255,255,255,0.8);
+}
+
+select {
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image:
+    linear-gradient(45deg, transparent 50%, #2b84db 50%),
+    linear-gradient(135deg, #2b84db 50%, transparent 50%);
+  background-position:
+    calc(100% - 18px) center,
+    calc(100% - 12px) center;
+  background-size:
+    6px 6px,
+    6px 6px;
+  background-repeat: no-repeat;
+  padding-right: 36px;
+}
+
+/* =========================================================
+   TABLE (Aero glass style)
+   ========================================================= */
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 2px solid rgba(127,195,255,0.4);
+  box-shadow: 0 4px 18px rgba(43,132,219,0.08);
+  background: rgba(255,255,255,0.85);
+}
+
+thead tr {
+  background: linear-gradient(180deg, #7fc3ff 0%, #2b84db 100%);
+}
+
+thead th {
+  padding: 12px 16px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0,50,120,0.4);
+  text-align: left;
+  letter-spacing: 0.3px;
+  border: none;
+}
+
+/* Glossy shine on header */
+thead tr::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 50%;
+  background: linear-gradient(180deg,
+    rgba(255,255,255,0.3) 0%,
+    rgba(255,255,255,0) 100%);
+  pointer-events: none;
+}
+thead tr {
+  position: relative;
+}
+
+tbody tr {
+  transition: background 0.2s;
+}
+
+tbody tr:nth-child(even) {
+  background: rgba(127,195,255,0.06);
+}
+
+tbody tr:hover {
+  background: rgba(127,195,255,0.15);
+}
+
+tbody td {
+  padding: 10px 16px;
+  font-size: 0.85rem;
+  color: #2a4a6a;
+  border-top: 1px solid rgba(200,225,245,0.4);
+  border: none;
+  border-bottom: 1px solid rgba(200,225,245,0.3);
+}
+
+/* Action buttons inside table */
+tbody td button {
+  padding: 5px 14px;
+  font-size: 0.78rem;
+  border-radius: 30px;
+  margin-right: 6px;
+}
+
+tbody td button:first-child {
+  /* Edit = green */
+  background: linear-gradient(180deg, #c8ff6e 0%, #7ec420 45%, #5da010 100%);
+  text-shadow: 0 1px 2px rgba(40,80,0,0.3);
+  box-shadow:
+    0 2px 6px rgba(100,180,20,0.2),
+    inset 0 1px 0 rgba(255,255,255,0.4);
+}
+
+tbody td button:last-child {
+  /* Delete = red */
+  background: linear-gradient(180deg, #ff8a8a 0%, #d03030 45%, #b02020 100%);
+  text-shadow: 0 1px 2px rgba(80,0,0,0.35);
+  box-shadow:
+    0 2px 6px rgba(200,40,40,0.2),
+    inset 0 1px 0 rgba(255,255,255,0.35);
+}
+
+/* =========================================================
+   EDIT PANEL (overlay card for editing)
+   ========================================================= */
+.edit-panel {
+  margin-top: 18px;
+  padding: 20px 24px;
+  background: linear-gradient(180deg,
+    rgba(255,245,220,0.9) 0%,
+    rgba(255,240,200,0.75) 100%);
+  border: 2px solid rgba(230,180,60,0.5);
+  border-radius: 16px;
+  box-shadow:
+    0 4px 18px rgba(200,150,20,0.1),
+    inset 0 1px 0 rgba(255,255,255,0.9);
+}
+
+.edit-panel h3 {
+  color: #b8860b;
+  margin-bottom: 14px;
+}
+
+/* =========================================================
+   HR SEPARATOR
+   ========================================================= */
+hr {
+  border: none;
+  height: 3px;
+  background: linear-gradient(90deg,
+    transparent 0%, #7fc3ff 15%, #2b84db 50%, #7fc3ff 85%, transparent 100%);
+  border-radius: 2px;
+  margin: 20px 0;
+  position: relative;
+}
+hr::after {
+  content: '◇';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(240,250,255,0.9);
+  padding: 0 8px;
+  color: #7fc3ff;
+  font-size: 0.8rem;
+}
+
+/* =========================================================
+   H1 / H2 / H3  overrides for Aero
+   ========================================================= */
+h1 {
+  font-family: 'Trebuchet MS', Tahoma, Arial, sans-serif;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #2b84db;
+  text-shadow: 0 1px 4px rgba(43,132,219,0.2);
+  margin: 20px 0 14px;
+  letter-spacing: -0.5px;
+}
+
+h2 {
+  font-family: 'Trebuchet MS', Tahoma, Arial, sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #2b84db;
+  margin: 0 0 14px;
+}
+
+h3 {
+  font-family: 'Trebuchet MS', Tahoma, Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #2b84db;
+}
+
+/* =========================================================
+   MUSIC PLAYER WIDGET (decorative, optional)
+   ========================================================= */
+.music-player {
+  margin-left: auto;
+  background: linear-gradient(180deg, rgba(255,255,255,0.8) 0%, rgba(220,238,255,0.55) 100%);
+  border: 1.5px solid rgba(255,255,255,0.9);
+  border-radius: 14px;
+  padding: 6px 14px;
+  box-shadow:
+    0 2px 8px rgba(43,132,219,0.1),
+    inset 0 1px 0 rgba(255,255,255,0.9);
+  text-align: center;
+  font-size: 0.72rem;
+  color: #4a7aaa;
+  user-select: none;
+}
+
+.music-player__controls {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 3px;
+  font-size: 0.78rem;
+  color: #2b84db;
+  cursor: pointer;
+}
+.music-player__controls span:hover {
+  color: #a8f02c;
+}
+
+/* =========================================================
+   LINKS FOOTER
+   ========================================================= */
+.links-footer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 24px;
+  flex-wrap: wrap;
+}
+
+.links-footer__label {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #2b84db;
+  letter-spacing: 1px;
+}
+
+.links-footer__line {
+  flex: 1;
+  height: 3px;
+  background: linear-gradient(90deg, #2b84db, #7fc3ff, transparent);
+  border-radius: 2px;
+  min-width: 40px;
+}
+
+.eq-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+}
+.eq-bar {
+  width: 5px;
+  border-radius: 2px;
+  background: linear-gradient(180deg, #7fc3ff, #2b84db);
+}
+.eq-bar:nth-child(1) { height: 12px; }
+.eq-bar:nth-child(2) { height: 20px; }
+.eq-bar:nth-child(3) { height: 16px; }
+.eq-bar:nth-child(4) { height: 24px; }
+.eq-bar:nth-child(5) { height: 18px; }
+
+/* =========================================================
+   FOOTER TEXT
+   ========================================================= */
+.footer-banner {
+  background: linear-gradient(90deg, #a8f02c, #7fc3ff, #2b84db);
+  border-radius: 14px;
+  padding: 14px 24px;
+  text-align: center;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin: 8px 24px 0;
+  box-shadow:
+    0 4px 18px rgba(43,132,219,0.18),
+    inset 0 1px 0 rgba(255,255,255,0.3);
+  text-shadow: 0 1px 4px rgba(0,50,120,0.3);
+  position: relative;
+  overflow: hidden;
+}
+.footer-banner::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 50%;
+  background: linear-gradient(180deg,
+    rgba(255,255,255,0.25) 0%,
+    rgba(255,255,255,0) 100%);
+}
+
+.footer-text {
+  text-align: center;
+  font-size: 0.72rem;
+  color: #7aafda;
+  margin-top: 10px;
+  padding-bottom: 20px;
+}
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(200,225,245,0.3);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #7fc3ff, #2b84db);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #5bb0f0, #1a6abf);
+}
+
+/* =========================================================
+   SHIMMER ANIMATION (utility)
+   ========================================================= */
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media (max-width: 700px) {
+  .aero-header h1 { font-size: 1.4rem; }
+  .aero-nav { flex-direction: column; }
+  .card { margin: 0 10px 16px; padding: 16px; }
+  form { flex-direction: column; }
+  select, input[type="text"], input[type="date"] { min-width: unset; }
+  table { font-size: 0.78rem; }
+  thead th, tbody td { padding: 8px 10px; }
+  .separator { margin: 10px 10px; }
+}

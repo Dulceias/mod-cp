@@ -1,6 +1,3 @@
 import axios from 'axios';
-
-// Esto enlaza tu frontend con el puerto 3000 de tu servidor actual
-export const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || 'http://localhost:3000'
-});
+const API_URL = import.meta.env.VITE_API_URL || 'https://cp-tracker-6b4v.onrender.com';
+export const api = axios.create({ baseURL: API_URL });
