@@ -9,7 +9,7 @@ function App() {
       {/* ── Window Title Bar (XP/Vista style) ── */}
       <div className="window-titlebar">
         <span className="window-titlebar__icon">🌐</span>
-        <span className="window-titlebar__text">Tracker de Problemas — CP Training</span>
+        <span className="window-titlebar__text">Tracker de Problemas</span>
         <div className="window-titlebar__controls">
           <div className="window-btn window-btn--min">−</div>
           <div className="window-btn window-btn--max">□</div>
@@ -23,25 +23,7 @@ function App() {
         {/* ── Aero Header ── */}
         <div className="aero-header">
           <h1>Tracker de Problemas</h1>
-          <p>Competitive Programming — Training Log</p>
-        </div>
-
-        {/* ── Nav bar (decorative) ── */}
-        <div className="aero-nav">
-          <button type="button">Home</button>
-          <button type="button">About</button>
-
-          {/* Music player widget */}
-          <div className="music-player">
-            <div>playing : lofi beats</div>
-            <div className="music-player__controls">
-              <span>◀</span>
-              <span>◁</span>
-              <span>❚❚</span>
-              <span>▷</span>
-              <span>▶</span>
-            </div>
-          </div>
+          <p>Programación competitiva</p>
         </div>
 
         {/* ── Separator ── */}
@@ -62,7 +44,7 @@ function App() {
 
         {/* ── Links Footer ── */}
         <div className="links-footer">
-          <span className="links-footer__label">. . . links</span>
+          <span className="links-footer__label">. . . cp tracker</span>
           <div className="links-footer__line"></div>
           <div className="eq-bars">
             <div className="eq-bar"></div>
@@ -73,11 +55,10 @@ function App() {
           </div>
         </div>
 
-        {/* ── Footer Banner ── */}
         <div className="footer-banner">
-          ✨ Keep training, keep improving! ✨
+          Sofía González =)
         </div>
-        <p className="footer-text">( Tracker v1.0 — Frutiger Aero Edition )</p>
+        <p className="footer-text"></p>
       </div>
     </div>
   );
